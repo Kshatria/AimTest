@@ -1,0 +1,428 @@
+.index {
+    padding-top: 150px;
+    position: relative;
+    padding-left: 122px;
+    display: flex;
+    justify-content: space-between;
+
+    background-image: url('../img/index/index_bg.png');
+    background-position: bottom 0 right 0;
+    background-repeat: no-repeat;
+    background-size: 70%;
+
+    &__title-container {
+        height: 100px;
+        overflow: hidden;
+    }
+
+    &__title {
+        @include secondary-title;
+        transform: translateY(100px);
+        margin-bottom: 40px;
+    }
+
+    &__title.active {
+        animation-name: blockTitle;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+    }
+
+    &__btn {
+        display: block;
+        @include button-white;
+        max-width: 230px;
+        font-weight: 400;
+        padding-right: 53px;
+        animation-name: rotateButton;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 14px;
+            right: 25px;
+            width: 13px;
+            height: 20px;
+
+            background-image: url('../img/index/index_button-vector.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+    }
+
+    &__block {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -52px;
+            left: 0;
+
+            background-position: 0 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &--securely::before {
+            width: 30px;
+            height: 27px;
+
+            background-image: url('../img/index/index1.svg');
+        }
+
+        &--effect::before {
+            width: 33px;
+            height: 30px;
+
+            background-image: url('../img/index/index2.svg');
+        }
+
+        &--profit::before {
+            width: 30px;
+            height: 30px;
+
+            background-image: url('../img/index/index3.svg');
+        }
+    }
+
+    &__subtitle {
+        @include secondary-title;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+
+    &__desc {
+        font-size: 18px;
+        line-height: 27px;
+        color: #ffffff;
+    }
+
+    &__logo-left {
+        position: absolute;
+        left: -260px;
+        bottom: 30px;
+        width: 810px;
+        height: 405px;
+        padding-bottom: 25px;
+        padding-right: 70px;
+        transform: translateY(-1000px);
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 160px;
+            height: 198px;
+
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url('../img/index/index-dec1.png');
+        }
+    }
+
+    &__logo-left.active {
+        animation-name: leftBlock;
+        animation-duration: 2s;
+        animation-delay: 0.5s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+    }
+
+    &__logo-right {
+        position: absolute;
+        left: 600px;
+        bottom: 30px;
+        width: 339px;
+        height: 244px;
+        padding-bottom: 25px;
+        transform: translateY(1000px);
+    }
+
+    &__logo-right.active {
+        animation-name: bottomBlock;
+        animation-duration: 2s;
+        animation-delay: 0.5s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+    }
+
+    .parallax-perspective {
+        transform: translateX(1000px);
+        position: relative;
+
+        &--mobile {
+            display: none;
+        }
+
+        &--1 {
+            animation-delay: 1.5s;
+        }
+
+        &--2 {
+            animation-delay: 2s;
+        }
+
+        &--3 {
+            animation-delay: 2.5s;
+        }
+    }
+
+    .parallax-perspective.active {
+        animation-name: rightBlock;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+    }
+    
+    .parallax-card-wrap {
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+        -webkit-perspective-origin: center;
+        perspective-origin: center;
+        display: inline-block;
+    }
+
+    .parallax-card__content {
+        left: 0;
+        position: relative;
+        top: 50%;
+        transform: translate3d(0px, 0%, 40px);
+        width: 100%;
+    }
+
+    .parallax-card {
+        position: relative;
+        transition: none;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transform: rotateX(0deg) rotateY(0deg);
+        transform-style: preserve-3d;
+        will-change: transform;
+    
+        padding: 30px 40px 74px;
+        background: linear-gradient(103.99deg, #E15050 -1.95%, #E76D51 102.02%);
+        box-shadow: 3px 3px 23px rgba(0, 0, 0, 0.1);
+        border-radius: 24px;
+        margin-bottom: 20px;
+        max-width: 345px;
+    }
+
+}
+
+@media (max-width: 1700px) {
+    .index {
+        &__logo-left {
+            width: 700px;
+            left: -90px;
+            top: 45%;
+            bottom: auto;
+        }
+
+        &__logo-right {
+            width: 300px;
+            top: 45%;
+            padding-top: 125px;
+        }
+
+        &__block {
+            &::before {
+                bottom: -40px;
+                
+            }
+        }
+
+        .parallax-card {
+            padding: 20px 30px 60px;
+        }
+    }
+}
+
+@media (max-width: 1500px) {
+    .index {
+        &__logo-left {
+            width: 550px;
+            height: 320px;
+        }
+
+        &__logo-right {
+            width: 220px;
+            padding-top: 100px;
+            left: 450px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .index {
+        padding-top: 200px;
+        background-position: bottom center;
+        &__logo-left,
+        &__logo-right {
+            display: none;
+        }
+
+        .parallax-perspective {
+            &--mobile {
+                display: block;
+            }
+
+            &--desktop {
+                display: none;
+            }
+        }
+
+        &__title-wrapper {
+            min-height: 205px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .index {
+        padding-top: 50px;
+        padding-left: 0;
+        justify-content: flex-start;
+        height: calc(100vh - 200px);
+        background-position: bottom right;
+        flex-direction: column;
+
+        &__title-wrapper {
+            min-height: auto;
+            padding-left: 50px;
+        }
+
+        &__title {
+            font-size: 16px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        &__btn {
+            display: block;
+            font-size: 14px;
+            line-height: 21px;
+            max-width: 185px;
+            padding: 12px 10px 14px;
+            margin-bottom: 30px;
+
+            &::before {
+                right: 15px;
+            }
+        }
+
+        &__right-col {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .parallax-card {
+            margin-left: 50px;
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+            border-radius: 0;
+            margin-bottom: 30px;
+            max-width: 270px;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        &__block {
+            padding-left: 50px;
+            &::before {
+                left: 0px;
+                bottom: auto;
+                top: 0;
+            }
+
+            &--profit::before {
+                background-image: url('../img/index/indexRed3.svg');
+            }
+
+            &--securely::before {
+                background-image: url('../img/index/indexRed1.svg');
+            }
+
+            &--effect::before {
+                background-image: url('../img/index/indexRed2.svg');
+            }
+        }
+
+        .parallax-perspective {
+            &--mobile {
+                display: none;
+            }
+
+            &--desktop {
+                display: block;
+            }
+        }
+
+        &__subtitle {
+            color: #262626;
+            font-size: 14px;
+            line-height: 21px;
+        }
+
+        &__desc {
+            color: #262626;
+            font-size: 14px;
+            line-height: 21px;
+        }
+
+        &__logo-left,
+        &__logo-right {
+            display: block;
+        }
+
+        &__logo-left {
+            width: 280px;
+            left: 0;
+            bottom: 0;
+            top: auto;
+            height: auto;
+
+            &::before {
+                width: 50px;
+                height: 70px;
+                bottom: 7px;
+                right: 45px;
+            }
+        }
+
+        &__logo-right {
+            width: 120px;
+            height: 200px;
+            bottom: 0;
+            top: auto;
+            right: auto;
+            left: 240px;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .index {
+        &__logo-left {
+            width: 260px;
+            z-index: 0;
+        }
+
+        &__logo-right {
+            width: 100px;
+            height: 190px;
+            left: 210px;
+            z-index: 0;
+        }
+    }
+}

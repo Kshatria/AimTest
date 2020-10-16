@@ -1,0 +1,123 @@
+.contacts {
+    padding-top: 150px;
+    position: relative;
+    &__wrapper {
+        width: 380px;
+    }
+
+    &__title {
+        @include secondary-title;
+        margin-bottom: 70px;
+    }
+
+    &__desc {
+        margin-bottom: 30px;
+        padding-right: 30px;
+
+        span {
+            font-size: 18px;
+            line-height: 27px;
+            margin-bottom: 10px;
+
+            display: block;
+        }
+
+        a:hover,
+        a:focus {
+            color: #262626;
+        }
+    }
+
+    &__copyright {
+        font-size: 18px;
+        line-height: 27px;
+        font-weight: 700;
+        font-style: normal;
+        display: block;
+    }
+
+    &__social {
+        display: flex;
+    }
+
+    &__social-item {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-30%);
+        width: 950px;
+        height: 500px;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    }
+}
+
+@media (max-width: 1500px) {
+    .contacts {
+        .map {
+            width: 700px;
+            height: 400px;
+        }
+
+        &__title {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .contacts {
+        padding-top: 230px;
+        &__title,
+        &__desc span,
+        &__desc a {
+            font-size: 16px;
+        }
+
+        &__title,
+        &__desc {
+            margin-bottom: 20px;
+        }
+
+        .map {
+            width: 500px;
+            height: 300px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .contacts {
+        padding-top: 50px;
+        padding-left: 0;
+        justify-content: flex-start;
+        height: calc(100vh - 200px);
+        background-position: bottom right;
+        flex-direction: column;
+
+        &__title {
+            padding-left: 0;
+        }
+
+        &__wrapper {
+            margin: 0 auto;
+        }
+
+        .map {
+            display: none;
+        }
+    }
+}

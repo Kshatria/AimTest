@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #262626;
+    background-color: #ffffff;
+
+    overflow-x: hidden;
+  }
+
+  address {
+    margin-bottom: 0;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  h1, h2, h3, h4, h5, p, ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+  a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  ul {
+    list-style: none;
+  }
+  button {
+    outline: none !important;
+    background-color: transparent;
+    border: none;
+  }
+
+  #magic-cursor {
+	  position: absolute;
+	  width: 30px;
+	  height: 30px;
+	  pointer-events: none;
+	  z-index:1000000;
+	}
+	
+	#ball {
+		position: fixed;
+		display: block;
+		left: 0;
+		top: 0;
+		transform: translate(-50%, -50%);
+		width: 25px;
+		height: 25px;
+		border: 2px solid $red;
+		border-radius: 50%;
+		pointer-events: none;
+		opacity:1;
+	
+  }
+
+  @media (min-width: 1500px) {
+    .container {
+      max-width: 1440px;
+    }
+    .main__slide--blog .container,
+    .main__slide--reviews .container {
+      max-width: 1540px;
+    }
+    .main__slide--contacts .container {
+      max-width: 1196px;
+    }
+  }
+  

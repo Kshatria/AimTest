@@ -1,0 +1,208 @@
+.reviews {
+    padding-top: 150px;
+    &__title {
+        @include secondary-title;
+        padding-left: 122px;
+        margin-bottom: 100px;
+    }
+
+    &__container {
+        padding: 0 50px;
+    }
+
+    &__item {
+        padding: 40px;
+        background-color: #ffffff;
+        border: 1px solid $red;
+        border-radius: 24px;
+        max-width: 710px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &--left {
+            margin-right: 40px;
+        }
+    }
+
+    &__img-wrapper {
+        width: 200px;
+        height: 200px;
+        background-color: #bdbdbd;
+        border-radius: 24px;
+        margin-bottom: 20px;
+
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 24px;
+        }
+    }
+
+    &__profit {
+        color: $red;
+        margin-bottom: 15px;
+
+        span {
+            display: block;
+            font-weight: 700;
+        }
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 26px;
+        margin-bottom: 15px;
+    }
+
+    &__button {
+        @include button-white;
+        font-weight: 400;
+        border: 1px solid #262626;
+        max-width: 160px;
+        margin-left: auto;
+
+        &--mobile {
+            display: none;
+        }
+    }
+
+    &__button-next-wrapper,
+    &__button-prev-wrapper {
+        position: absolute;
+        top: 50%;
+
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .img-control {
+        margin: 12px auto;
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        &--next {
+            background-image: url('../img/next_right.png');
+        }
+
+        &--prev {
+            background-image: url('../img/next_left.png');
+        }
+    }
+
+    &__button-next-wrapper {
+        right: 15px;
+        transform: translateY(-50%);
+    }
+
+    &__button-prev-wrapper {
+        left: 15px;
+        transform: translateY(-50%);
+        display: none;
+    }
+
+    &__button-prev,
+    &__button-next {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1500px) {
+    .reviews {
+        &__title {
+            margin-bottom: 50px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .reviews {
+        padding-top: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .reviews {
+        padding-top: 50px;
+        padding-left: 0;
+        justify-content: flex-start;
+        height: calc(100vh - 200px);
+        background-position: bottom right;
+        flex-direction: column;
+
+        &__title {
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+
+        &__img-wrapper {
+            display: none;
+        }
+
+        &__button {
+            display: none;
+            &--mobile {
+                display: block;
+                order: 3;
+                margin: 0 auto;
+            }
+        }
+
+        &__col--right {
+            order: 1;
+            margin-bottom: 30px;
+        }
+
+        &__col--left {
+            order: 2;
+        }
+
+        &__item {
+            flex-direction: column;
+            padding: 30px;
+        }
+
+        &__button-prev-wrapper,
+        &__button-next-wrapper {
+            display: none;
+        }
+
+        &__profit {
+            display: flex;
+
+            span {
+                padding-right: 20px;
+                margin-right: 15px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    width: 10px;
+                    height: 1px;
+                    background-color: $red;
+                }
+            }
+        }
+    }
+}

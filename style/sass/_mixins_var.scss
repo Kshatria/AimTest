@@ -1,0 +1,99 @@
+$red: #E15050;
+$black: #262626;
+
+@mixin page-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 52px;
+    line-height: 63px;
+    font-weight: 600;
+
+    @media (max-width: 1600px) {
+        font-size: 40px;
+        line-height: 51px;
+    }
+
+    @media (max-width: 1200px) {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    @media (max-width: 1050px) {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 24px;
+        line-height: 26px;
+    }
+}
+
+@mixin primary-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 38px;
+    line-height: 46px;
+    font-weight: 600;
+
+    @media (max-width: 1600px) {
+        font-size: 28px;
+    }
+
+    @media (max-width: 1200px) {
+        font-size: 22px;
+        line-height: 30px;
+    }
+}
+
+@mixin secondary-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+
+    @media (max-width: 1200px) {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+
+@mixin button-white {
+    border-radius: 24px;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.13);
+    padding: 14px 30px 12px;
+    text-align: center;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #000000;
+
+    &:hover, &:focus {color: #000000;}
+    &:active {color: #000000;}
+}
+
+@mixin button-red {
+    border-radius: 24px;
+    background: linear-gradient(0deg, #E15050 0%, #E76D51 100%);
+    padding: 14px 30px 12px;
+    text-align: center;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+
+    &:hover, &:focus {color: #000000;}
+    &:active {color: #000000;}
+}
+
+@mixin custom-button {
+    color: $red;
+    padding: 12px 30px;
+    border: 1px solid $red;
+    border-radius: 24px;
+    text-align: center;
+    
+    &:hover, &:focus {color: #000000;}
+    &:active {color: #000000;}
+}

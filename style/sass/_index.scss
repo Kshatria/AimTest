@@ -34,11 +34,8 @@
         max-width: 230px;
         font-weight: 400;
         padding-right: 53px;
-        animation-name: rotateButton;
-        animation-duration: 1s;
-        animation-timing-function: ease;
-
         position: relative;
+        transform: rotate3d(1, 0, 0, 90deg) scale(0.8);
 
         &::before {
             content: "";
@@ -53,6 +50,13 @@
             background-repeat: no-repeat;
             background-position: 0 0;
         }
+    }
+
+    &__btn.active {
+        animation-name: rotateButton;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
     }
 
     &__block {

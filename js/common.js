@@ -174,8 +174,7 @@ if (window.innerWidth > 992) {
           self.anim(this, self.getTransforms(this)[0], self.getTransforms(this)[1], 0.3);
       });    
   }
-  parallaxHover('.parallax-card', '.parallax-perspective', 8);
-
+    parallaxHover('.parallax-card', '.parallax-perspective', 8);
 }
 
 //init main slider
@@ -277,11 +276,13 @@ $(document).ready(function () {
         $('.index__logo-left').addClass('active')
         $('.index__logo-right').addClass('active')
         $('.parallax-perspective').addClass('active')
+        $('.index__btn').addClass('active')
       } else {
         $('.index__title').removeClass('active')
         $('.index__logo-left').removeClass('active')
         $('.index__logo-right').removeClass('active')
         $('.parallax-perspective').removeClass('active')
+        $('.index__btn').removeClass('active')
         }
     })
 })();

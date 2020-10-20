@@ -69,7 +69,14 @@ $black: #262626;
     font-weight: 700;
     color: #000000;
 
-    &:hover, &:focus {color: #000000;}
+    transform-style: flat;
+    transition: all 250ms ease-out;
+
+    &:hover, &:focus {
+        color: #000000;
+        transform: scale(1.05);
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    }
     &:active {color: #000000;}
 }
 
@@ -83,7 +90,14 @@ $black: #262626;
     font-weight: 600;
     color: #ffffff;
 
-    &:hover, &:focus {color: #000000;}
+    transform-style: flat;
+    transition: all 250ms ease-out;
+
+    &:hover, &:focus {
+        color: #000000;
+        transform: scale(1.05);
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    }
     &:active {color: #000000;}
 }
 
@@ -93,7 +107,14 @@ $black: #262626;
     border: 1px solid $red;
     border-radius: 24px;
     text-align: center;
-    
-    &:hover, &:focus {color: #000000;}
+
+    transform-style: flat;
+    transition: all 250ms ease-out;
+  
+    &:hover, &:focus {
+        color: #000000;
+        transform: scale(1.05);
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    }
     &:active {color: #000000;}
 }

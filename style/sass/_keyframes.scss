@@ -83,13 +83,13 @@
 }
 
 @keyframes rotateButton {
-    // from {
-    //     transform: rotate3d(0, 0, 0, 0) scale(0.5);
-    // }
+    from {
+        transform: rotate3d(1, 0, 0, 90deg) scale(0.8);
+    }
 
-    // to {
-    //     transform: rotate3d(1, 0, 0, 1080deg) scale(1);
-    // }
+    to {
+        transform: rotate3d(1, 0, 0, 0) scale(1);
+    }
 }
 
 @keyframes bottomBlock {
